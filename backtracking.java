@@ -14,21 +14,21 @@ public class backtracking {
     }
 
     // Number Permutation Using Boolean Array
-    public static void numPermutation(int arr[], boolean used[], String perm) {
-        if (perm.length() == arr.length * 2 - 1) { // Because numbers are separated by spaces
-            System.out.println(perm);
-            return;
-        }
+    public static void numPermutation(int arr[], boolean used[], String per) {
+       if(per.length()==arr.length*2-1){
+        System.out.println(per);
+        return;
+       }
+       for(int i=0;i<arr.length;i++){
+        if(!used[i]){
+        used[i]=true;
+        numPermutation(arr, used, per+arr[i]+"");
+        used[i]=false;
 
-        for (int i = 0; i < arr.length; i++) {
-            if (!used[i]) {
-                used[i] = true;
-                numPermutation(arr, used, perm + arr[i] + " "); // Add number with space
-                used[i] = false; // Backtrack
-            }
         }
     }
-
+}
+       
     public static void main(String[] args) {
         // String Permutations
         String str = "ABC";
@@ -37,7 +37,7 @@ public class backtracking {
 
         // Number Permutations
         int arr[] = {1, 2, 3};
-        boolean used[] = new boolean[arr.length]; // Track used elements
+        boolean used[] =new boolean[arr.length];
         System.out.println("\nNumber Permutations:");
         numPermutation(arr, used, "");
     }
