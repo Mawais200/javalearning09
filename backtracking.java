@@ -41,4 +41,6 @@ public class backtracking {
         System.out.println("\nNumber Permutations:");
         numPermutation(arr, used, "");
     }
+
+   
 }
