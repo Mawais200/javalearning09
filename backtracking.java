@@ -12,6 +12,9 @@ public class backtracking {
             permutation(newStr, perm + curr);
         }
     }
+    public static void Nquene(){
+        
+    }
 
     // Number Permutation Using Boolean Array
     public static void numPermutation(int arr[], boolean used[], String per) {
